@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  	<v-header></v-header>
+  	<v-header :seller="seller"></v-header>
 
   	<div class="tab">
   		<div class="tab-item">
@@ -30,8 +30,7 @@
     },
     created() {
       this.$http.get('/api/seller').then((response) => {
-          response = response.json();
-          console.log(response);
+          response = response.body;
           if (response.errno === ERR_OK) {
             this.seller = response.data;
 
@@ -47,7 +46,7 @@
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
-  @import './common/stylus/mixin.styl' 
+  @import './common/stylus/mixin.styl'
 
   #app
     .tab
