@@ -1,8 +1,9 @@
 # sell
 
-> A Vue.js project
+> 利用Vue开发的高仿饿了么项目
 
-## Build Setup
+
+## 编译步骤
 
 ``` bash
 # install dependencies
@@ -19,3 +20,4 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
