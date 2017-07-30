@@ -20,12 +20,15 @@
 
       </div>
       <div v-if="seller.supports" class="support-count">
-        <span class="count">{{seller.supports.length}}</span>
-        <i class=".icon-keyboard_arrow_right"></i>
+        <span class="count">{{seller.supports.length}}个</span>
+        <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
 
-    <div class="bulletin-wrapper"></div>
+    <div class="bulletin-wrapper">
+      <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span>
+      <i class="icon-keyboard_arrow_right"></i>
+    </div>
   </div>
 </template>
 
@@ -38,7 +41,7 @@
     },
     created() {
       this.classMap =
-        ['decrease','discount','guarantee','invoice','special']
+        ['decrease', 'discount', 'guarantee', 'invoice', 'special']
     }
   }
 </script>
@@ -48,7 +51,7 @@
 
   .header
     color: #fff
-    background: #000
+    background: #999
     .content-wrapper
       position relative
       padding: 24px 12px 18px 24px
@@ -96,14 +99,58 @@
             &.guarantee
               bg-image('guarantee_1')
             &.invoice
-             bg-image('invoice_1')
+              bg-image('invoice_1')
             &.special
               bg-image('special_1')
           .text
             line-height 12px
             font-size 10px
-
-
       .support-count
         position absolute
+        right 12px
+        bottom 18px
+        padding  0 8px
+        height 24px
+        line-height 24px
+        border-radius 14px
+        background-color rgba(0,0,0,0.2)
+        text-align center
+        .count
+          vertical-align  top
+          font-size 10px
+        .icon-keyboard_arrow_right
+          line-height 24px
+          margin-left: 2px
+          font-size 10px
+
+    .bulletin-wrapper
+      position relative
+      height: 28px
+      line-height 28px
+      padding: 0 22px 0 12px
+      white-space nowrap
+      overflow hidden
+      -ms-text-overflow: ellipsis
+      text-overflow: ellipsis
+      background rgba(7,17,27,0.2)
+      .bulletin-title
+        display: inline-block
+        vertical-align top
+        margin-top 7px
+        width 22px
+        height 12px
+        bg-image('bulletin')
+        background-size 22px 12px
+        background-repeat no-repeat
+      .bulletin-text
+        vertical-align: top
+        font-size 10px
+        margin 0 4px
+      .icon-keyboard_arrow_right
+        position absolute
+        font-size 10px
+        right 10px
+        bottom 8px
+
+
 </style>
