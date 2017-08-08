@@ -30,8 +30,6 @@
         let hasDecimal = score % 1 !== 0
         let integer = Math.floor(score)
 
-        console.info(integer)
-
         for (let i = 0; i < integer; i++) {
           result.push(CLS_ON)
         }
@@ -42,8 +40,6 @@
         while (result.length < LENGTH) {
           result.push(CLS_OFF)
         }
-
-        console.info(result)
 
         return result;
       }
